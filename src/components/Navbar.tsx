@@ -21,9 +21,7 @@ const Navbar = () => {
       <nav className="container flex items-center justify-between h-16">
         <Link to="/" className="flex items-center gap-2">
           <img src={Logo} alt="RoPratech Logo" className="h-10 w-auto object-contain" />
-          <span className="text-xl font-heading font-extrabold tracking-tight hidden sm:block">
-            <span className="gradient-text">Ro</span>Pratech
-          </span>
+
         </Link>
 
         {/* Desktop */}
