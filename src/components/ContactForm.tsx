@@ -1,50 +1,65 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Send } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    const form = e.currentTarget;
-    const name = (form.elements.namedItem("name") as HTMLInputElement).value.trim();
-    const mobile = (form.elements.namedItem("mobile") as HTMLInputElement).value.trim();
-    const business = (form.elements.namedItem("business") as HTMLInputElement).value.trim();
-    const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value.trim();
 
-    if (!name || !mobile || !message) {
-      toast({ title: "Please fill all required fields", variant: "destructive" });
+    if (!formRef.current) return;
+
+    try {
+      // Sign up at https://www.emailjs.com/
+      const YOUR_SERVICE_ID = "service_gan2zkq";
+      const YOUR_TEMPLATE_ID = "template_ejrbb9r"; 
+      const YOUR_PUBLIC_KEY = "PnE8I4AbEMxg_BBHs";
+
+      await emailjs.sendForm(
+        YOUR_SERVICE_ID,
+        YOUR_TEMPLATE_ID,
+        formRef.current,
+        YOUR_PUBLIC_KEY
+      );
+
+      toast({
+        title: "Message Sent Successfully!",
+        description: "We'll get back to you shortly.",
+        className: "bg-green-50 border-green-200 text-green-900",
+      });
+      
+      formRef.current.reset();
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again later or contact us directly on WhatsApp.",
+        variant: "destructive",
+      });
+    } finally {
       setLoading(false);
-      return;
     }
-
-    const waText = encodeURIComponent(
-      `Hi RoPratech!\n\nName: ${name}\nMobile: ${mobile}\nBusiness: ${business}\nMessage: ${message}`
-    );
-    window.open(`https://wa.me/919999999999?text=${waText}`, "_blank");
-
-    toast({ title: "Redirecting to WhatsApp…", description: "We'll respond within a few hours." });
-    form.reset();
-    setLoading(false);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 max-w-lg">
+    <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 max-w-lg">
       <div className="grid gap-4 sm:grid-cols-2">
-        <Input name="name" placeholder="Your Name *" required maxLength={100} className="bg-card rounded-lg h-12" />
-        <Input name="mobile" placeholder="Mobile Number *" required type="tel" maxLength={15} className="bg-card rounded-lg h-12" />
+        <Input name="from_name" placeholder="Your Name *" required maxLength={100} className="bg-card rounded-lg h-12" />
+        <Input name="from_mobile" placeholder="Mobile Number *" required type="tel" maxLength={15} className="bg-card rounded-lg h-12" />
       </div>
-      <Input name="business" placeholder="Business Type (e.g. Shop, School)" maxLength={100} className="bg-card rounded-lg h-12" />
+      <Input name="business_type" placeholder="Business Type (e.g. Shop, School)" maxLength={100} className="bg-card rounded-lg h-12" />
       <Textarea name="message" placeholder="Tell us what you need *" required maxLength={1000} rows={4} className="bg-card rounded-lg resize-none" />
       <Button type="submit" disabled={loading} className="w-full h-12 rounded-lg gradient-primary border-0 text-white font-semibold gap-2 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all">
         <Send className="h-4 w-4" />
-        {loading ? "Sending…" : "Send Inquiry"}
+        {loading ? "Sending..." : "Send Inquiry"}
       </Button>
     </form>
   );
