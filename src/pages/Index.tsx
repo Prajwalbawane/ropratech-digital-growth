@@ -48,9 +48,16 @@ const stats = [
   { icon: Zap, value: "24/7", label: "Support Available" },
 ];
 
+import SEO from "@/components/SEO";
+
 const Index = () => {
   return (
     <>
+      <SEO 
+        title="Best Web Design & Digital Marketing in Gadchiroli"
+        description="RoPratech offers affordable websites, mobile apps, and digital marketing services for local businesses in Gadchiroli. Get your business online today!"
+        keywords="Gadchiroli website design, app development Gadchiroli, digital marketing agency, local SEO services, business website India"
+      />
       {/* Hero */}
       <section className="relative overflow-hidden hero-gradient text-white min-h-[90vh] flex items-center">
         {/* Background orbs */}

@@ -51,8 +51,15 @@ const services = [
   },
 ];
 
+import SEO from "@/components/SEO";
+
 const Services = () => (
   <>
+    <SEO 
+      title="Web Development & App Services in Gadchiroli | RoPratech"
+      description="Affordable business websites, Android apps, improved Google rankings, and WhatsApp automation for Gadchiroli businesses. View our services and prices."
+      keywords="website development Gadchiroli, android app developer, Google business profile setup, WhatsApp automation services, ecommerce website maker"
+    />
     <section className="hero-gradient text-white py-20 md:py-28 relative overflow-hidden">
       <div className="floating-orb w-72 h-72 bg-blue-500/20 top-[-10%] right-[10%]" />
       <div className="floating-orb w-48 h-48 bg-purple-500/15 bottom-[10%] left-[5%]" style={{ animationDelay: "3s" }} />
