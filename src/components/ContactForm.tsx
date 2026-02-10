@@ -30,6 +30,19 @@ const ContactForm = () => {
         YOUR_PUBLIC_KEY
       );
 
+      // ---------------------------------------------------------
+      // AUTO REPLY SETUP
+      // Ensure the "To Email" in this template is set to {{user_email}}
+      // ---------------------------------------------------------
+      const AUTO_REPLY_TEMPLATE_ID = "template_sthgd1i";
+      
+      await emailjs.sendForm(
+        YOUR_SERVICE_ID,
+        AUTO_REPLY_TEMPLATE_ID,
+        formRef.current,
+        YOUR_PUBLIC_KEY
+      );
+
       toast({
         title: "Message Sent Successfully!",
         description: "We'll get back to you shortly.",
@@ -54,8 +67,9 @@ const ContactForm = () => {
       <div className="grid gap-4 sm:grid-cols-2">
         <Input name="from_name" placeholder="Your Name *" required maxLength={100} className="bg-card rounded-lg h-12" />
         <Input name="from_mobile" placeholder="Mobile Number *" required type="tel" maxLength={15} className="bg-card rounded-lg h-12" />
+        <Input name="user_email" placeholder="Your Email (Optional)" type="email" maxLength={100} className="bg-card rounded-lg h-12" />
+        <Input name="business_type" placeholder="Business Type (e.g. Shop)" maxLength={100} className="bg-card rounded-lg h-12" />
       </div>
-      <Input name="business_type" placeholder="Business Type (e.g. Shop, School)" maxLength={100} className="bg-card rounded-lg h-12" />
       <Textarea name="message" placeholder="Tell us what you need *" required maxLength={1000} rows={4} className="bg-card rounded-lg resize-none" />
       <Button type="submit" disabled={loading} className="w-full h-12 rounded-lg gradient-primary border-0 text-white font-semibold gap-2 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all">
         <Send className="h-4 w-4" />
