@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import Logo from "@/assets/ROPRATECHLOGO.png";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -18,8 +19,11 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 glass-strong">
       <nav className="container flex items-center justify-between h-16">
-        <Link to="/" className="text-xl font-heading font-extrabold tracking-tight">
-          <span className="gradient-text">Ro</span>Pratech
+        <Link to="/" className="flex items-center gap-2">
+          <img src={Logo} alt="RoPratech Logo" className="h-10 w-auto object-contain" />
+          <span className="text-xl font-heading font-extrabold tracking-tight hidden sm:block">
+            <span className="gradient-text">Ro</span>Pratech
+          </span>
         </Link>
 
         {/* Desktop */}
