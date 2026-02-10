@@ -29,7 +29,7 @@ const Footer = () => (
               <Phone className="h-4 w-4" />
             </a>
             <a
-              href="mailto:hello@ropratech.com"
+              href="mailto:ropratech@gmail.com"
               className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
             >
               <Mail className="h-4 w-4" />
@@ -60,7 +60,7 @@ const Footer = () => (
           <h4 className="font-heading font-semibold mb-4 text-white/90">Contact</h4>
           <ul className="space-y-3 text-sm text-white/50">
             <li className="flex items-center gap-2"><Phone className="h-3.5 w-3.5 shrink-0" /> +91 99999 99999</li>
-            <li className="flex items-center gap-2"><Mail className="h-3.5 w-3.5 shrink-0" /> hello@ropratech.com</li>
+            <li className="flex items-center gap-2"><Mail className="h-3.5 w-3.5 shrink-0" /> ropratech@gmail.com</li>
             <li className="flex items-start gap-2"><MapPin className="h-3.5 w-3.5 shrink-0 mt-0.5" /> Gadchiroli, Maharashtra</li>
           </ul>
         </div>

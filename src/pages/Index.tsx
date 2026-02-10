@@ -267,7 +267,7 @@ const Index = () => {
                 {[
                   { icon: () => <img src={WhatsappLogo} alt="WhatsApp" className="h-5 w-5" />, label: "WhatsApp", value: "+91 99999 99999", href: "https://wa.me/919999999999", iconBg: "bg-whatsapp/10", iconColor: "text-whatsapp" },
                   { icon: Phone, label: "Phone", value: "+91 99999 99999", href: "tel:+919999999999", iconBg: "bg-primary/10", iconColor: "text-primary" },
-                  { icon: Mail, label: "Email", value: "hello@ropratech.com", href: "mailto:hello@ropratech.com", iconBg: "bg-primary/10", iconColor: "text-primary" },
+                  { icon: Mail, label: "Email", value: "ropratech@gmail.com", href: "mailto:ropratech@gmail.com", iconBg: "bg-primary/10", iconColor: "text-primary" },
                 ].map((c) => (
                   <a key={c.label} href={c.href} target={c.label === "WhatsApp" ? "_blank" : undefined} rel={c.label === "WhatsApp" ? "noopener noreferrer" : undefined} className="flex items-center gap-4 p-4 bg-card rounded-xl border hover:shadow-md transition-all group">
                     <div className={`w-11 h-11 rounded-xl ${c.iconBg} flex items-center justify-center shrink-0`}>
