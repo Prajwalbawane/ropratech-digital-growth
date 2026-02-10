@@ -4,6 +4,7 @@ import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "@/assets/ROPRATECHLOGO.png";
+import WhatsappLogo from "@/assets/whatsapp-logo.svg";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -54,7 +55,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
           >
             <Button size="sm" className="bg-whatsapp hover:bg-whatsapp/90 text-whatsapp-foreground gap-2 rounded-full shadow-lg shadow-whatsapp/20">
-              <MessageCircle className="h-4 w-4" /> WhatsApp
+              <img src={WhatsappLogo} alt="WhatsApp" className="h-4 w-4" /> WhatsApp
             </Button>
           </a>
         </div>
@@ -95,7 +96,7 @@ const Navbar = () => {
               </a>
               <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" className="flex-1">
                 <Button size="sm" className="w-full bg-whatsapp hover:bg-whatsapp/90 text-whatsapp-foreground rounded-full">
-                  <MessageCircle className="h-4 w-4 mr-1" /> WhatsApp
+                  <img src={WhatsappLogo} alt="WhatsApp" className="h-4 w-4 mr-1" /> WhatsApp
                 </Button>
               </a>
             </div>

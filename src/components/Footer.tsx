@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, MessageCircle, ArrowUpRight } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
+import WhatsappLogo from "@/assets/whatsapp-logo.svg";
 
 const Footer = () => (
   <footer className="hero-gradient text-white">
@@ -19,7 +20,7 @@ const Footer = () => (
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-whatsapp/20 flex items-center justify-center text-whatsapp hover:bg-whatsapp/30 transition-colors"
             >
-              <MessageCircle className="h-4 w-4" />
+              <img src={WhatsappLogo} alt="WhatsApp" className="h-4 w-4" />
             </a>
             <a
               href="tel:+919999999999"

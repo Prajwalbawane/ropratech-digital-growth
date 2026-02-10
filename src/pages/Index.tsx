@@ -9,13 +9,14 @@ import SectionHeading from "@/components/SectionHeading";
 import ContactForm from "@/components/ContactForm";
 import { FadeIn, StaggerContainer } from "@/components/AnimatedElements";
 import heroBg from "@/assets/hero-bg.jpg";
+import WhatsappLogo from "@/assets/whatsapp-logo.svg";
 
 const services = [
   { icon: Globe, title: "Business Website", desc: "Professional website that represents your business online.", price: "₹9,999" },
   { icon: Smartphone, title: "Mobile App", desc: "Custom mobile apps to serve your customers on the go.", price: "₹24,999" },
   { icon: ShoppingCart, title: "E-commerce Store", desc: "Sell your products online with a fully functional store.", price: "₹14,999" },
   { icon: MapPin, title: "Google Business Profile", desc: "Get found on Google Maps by local customers.", price: "₹1,999" },
-  { icon: MessageCircle, title: "WhatsApp Automation", desc: "Auto-replies, catalogs, and business messaging.", price: "₹2,999" },
+  { icon: () => <img src={WhatsappLogo} alt="WhatsApp" className="h-6 w-6" />, title: "WhatsApp Automation", desc: "Auto-replies, catalogs, and business messaging.", price: "₹2,999" },
   { icon: FileText, title: "Billing Software", desc: "Simple billing and management for daily needs.", price: "₹7,999" },
   { icon: Wrench, title: "Maintenance & Support", desc: "Ongoing updates, hosting, and technical support.", price: "₹999/mo" },
 ];
@@ -23,7 +24,7 @@ const services = [
 const whyUs = [
   { icon: MapPin, title: "Local Support", desc: "Based in Gadchiroli. We understand your needs." },
   { icon: CreditCard, title: "Affordable Pricing", desc: "Fair pricing designed for small businesses." },
-  { icon: MessageCircle, title: "Simple Communication", desc: "Hindi, Marathi, or English — whatever works." },
+  { icon: () => <img src={WhatsappLogo} alt="WhatsApp" className="h-6 w-6" />, title: "Simple Communication", desc: "Hindi, Marathi, or English — whatever works." },
   { icon: Wrench, title: "After-Delivery Support", desc: "We don't disappear after delivery." },
   { icon: Shield, title: "Trusted by Locals", desc: "Serving Gadchiroli businesses with honesty." },
 ];
@@ -88,11 +89,11 @@ const Index = () => {
                   rel="noopener noreferrer"
                 >
                   <Button size="lg" className="bg-whatsapp hover:bg-whatsapp/90 text-white gap-2 text-base rounded-full shadow-xl shadow-whatsapp/25 h-12 px-6">
-                    <MessageCircle className="h-5 w-5" /> WhatsApp Us
+                    <img src={WhatsappLogo} alt="WhatsApp" className="h-5 w-5" /> WhatsApp Us
                   </Button>
                 </a>
                 <Link to="/contact">
-                  <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 gap-2 text-base rounded-full h-12 px-6 backdrop-blur-sm">
+                  <Button size="lg" variant="outline" className="bg-transparent border-white/20 text-white hover:bg-white/10 gap-2 text-base rounded-full h-12 px-6 backdrop-blur-sm">
                     Free Consultation <ArrowRight className="h-4 w-4" />
                   </Button>
                 </Link>
@@ -264,7 +265,7 @@ const Index = () => {
               <SectionHeading title="Get In Touch" subtitle="Have a question? Want a quote? Let's talk." center={false} />
               <div className="space-y-4 mt-8">
                 {[
-                  { icon: MessageCircle, label: "WhatsApp", value: "+91 99999 99999", href: "https://wa.me/919999999999", iconBg: "bg-whatsapp/10", iconColor: "text-whatsapp" },
+                  { icon: () => <img src={WhatsappLogo} alt="WhatsApp" className="h-5 w-5" />, label: "WhatsApp", value: "+91 99999 99999", href: "https://wa.me/919999999999", iconBg: "bg-whatsapp/10", iconColor: "text-whatsapp" },
                   { icon: Phone, label: "Phone", value: "+91 99999 99999", href: "tel:+919999999999", iconBg: "bg-primary/10", iconColor: "text-primary" },
                   { icon: Mail, label: "Email", value: "hello@ropratech.com", href: "mailto:hello@ropratech.com", iconBg: "bg-primary/10", iconColor: "text-primary" },
                 ].map((c) => (

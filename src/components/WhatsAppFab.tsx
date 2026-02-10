@@ -1,5 +1,5 @@
-import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import WhatsappLogo from "@/assets/whatsapp-logo.svg";
 
 const WhatsAppFab = () => (
   <motion.a
@@ -14,7 +14,7 @@ const WhatsAppFab = () => (
     whileTap={{ scale: 0.95 }}
     aria-label="Chat on WhatsApp"
   >
-    <MessageCircle className="h-5 w-5" />
+    <img src={WhatsappLogo} alt="WhatsApp" className="h-5 w-5" />
     <span className="text-sm font-semibold hidden sm:inline">Chat with us</span>
   </motion.a>
 );
