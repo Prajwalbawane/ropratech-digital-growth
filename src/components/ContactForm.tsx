@@ -67,7 +67,7 @@ const ContactForm = () => {
       <div className="grid gap-4 sm:grid-cols-2">
         <Input name="from_name" placeholder="Your Name *" required maxLength={100} className="bg-card rounded-lg h-12" />
         <Input name="from_mobile" placeholder="Mobile Number *" required type="tel" maxLength={15} className="bg-card rounded-lg h-12" />
-        <Input name="user_email" placeholder="Your Email *" required type="email" maxLength={100} className="bg-card rounded-lg h-12" />
+        <Input name="email" placeholder="Your Email *" required type="email" maxLength={100} className="bg-card rounded-lg h-12" />
         <Input name="business_type" placeholder="Business Type (e.g. Shop)" maxLength={100} className="bg-card rounded-lg h-12" />
       </div>
       <Textarea name="message" placeholder="Tell us what you need *" required maxLength={1000} rows={4} className="bg-card rounded-lg resize-none" />
