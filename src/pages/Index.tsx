@@ -166,7 +166,14 @@ const Index = () => {
       {/* Why Choose Us */}
       <section className="py-20 md:py-28 bg-section-alt">
         <div className="container">
-          <SectionHeading title="Why Choose RoPratech?" subtitle="We're not just another agency. We're your neighbours." />
+          <SectionHeading 
+            title={
+              <>
+                Why Choose <span className="text-[#1E73BE]">RoPra</span><span className="text-[#66BB33]">tech</span>?
+              </>
+            } 
+            subtitle="We're not just another agency. We're your neighbours." 
+          />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
             {whyUs.map((w, i) => (
               <FadeIn key={w.title} delay={i * 0.08}>
