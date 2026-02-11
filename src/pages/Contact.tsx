@@ -14,20 +14,20 @@ const Contact = () => (
       description="Get in touch with RoPratech for your website and app development needs in Gadchiroli. Call or WhatsApp us today!"
     />
     <section className="hero-gradient text-white py-20 md:py-28 relative overflow-hidden">
-      <div className="floating-orb w-72 h-72 bg-gold/10 top-[-10%] right-[10%]" />
-      <div className="floating-orb w-48 h-48 bg-primary/15 bottom-[10%] left-[5%]" style={{ animationDelay: "3s" }} />
+      <div className="floating-orb w-72 h-72 bg-blue-500/20 top-[-10%] right-[10%]" />
+      <div className="floating-orb w-48 h-48 bg-purple-500/15 bottom-[10%] left-[5%]" style={{ animationDelay: "3s" }} />
       <div className="container max-w-3xl text-center relative">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/20 text-sm text-gold mb-6">
-            <Zap className="h-4 w-4 text-gold" /> Let's Talk
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm text-white/80 mb-6">
+            <Zap className="h-4 w-4 text-secondary" /> Let's Talk
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black">Contact Us</h1>
-          <p className="mt-6 text-white/50 text-lg">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold">Contact Us</h1>
+          <p className="mt-6 text-white/60 text-lg">
             We'd love to hear from you. Reach out via WhatsApp, call, or the form below.
           </p>
           <div className="mt-8">
             <a href="https://wa.me/919999999999?text=Hi%20RoPratech" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-whatsapp hover:bg-whatsapp/90 text-white gap-2 rounded-xl shadow-xl shadow-whatsapp/25 h-12 px-8">
+              <Button size="lg" className="bg-whatsapp hover:bg-whatsapp/90 text-white gap-2 rounded-full shadow-xl shadow-whatsapp/25 h-12 px-8">
                 <MessageCircle className="h-5 w-5" /> Chat on WhatsApp
               </Button>
             </a>
@@ -52,25 +52,25 @@ const Contact = () => (
             <div className="space-y-4">
               {[
                 { icon: MessageCircle, label: "WhatsApp", value: "+91 99999 99999", href: "https://wa.me/919999999999", target: "_blank", iconBg: "bg-whatsapp/10", iconColor: "text-whatsapp" },
-                { icon: Phone, label: "Phone", value: "+91 99999 99999", href: "tel:+919999999999", iconBg: "bg-gold/10", iconColor: "text-gold" },
-                { icon: Mail, label: "Email", value: "ropratech@gmail.com", href: "mailto:ropratech@gmail.com", iconBg: "bg-gold/10", iconColor: "text-gold" },
-                { icon: MapPin, label: "Office", value: "Gadchiroli, Maharashtra, India", href: "#", iconBg: "bg-gold/10", iconColor: "text-gold" },
+                { icon: Phone, label: "Phone", value: "+91 99999 99999", href: "tel:+919999999999", iconBg: "bg-primary/10", iconColor: "text-primary" },
+                { icon: Mail, label: "Email", value: "ropratech@gmail.com", href: "mailto:ropratech@gmail.com", iconBg: "bg-primary/10", iconColor: "text-primary" },
+                { icon: MapPin, label: "Office", value: "Gadchiroli, Maharashtra, India", href: "#", iconBg: "bg-primary/10", iconColor: "text-primary" },
               ].map((c, i) => (
                 <FadeIn key={c.label} delay={i * 0.1}>
                   <a
                     href={c.href}
                     target={c.label === "WhatsApp" ? "_blank" : undefined}
                     rel={c.label === "WhatsApp" ? "noopener noreferrer" : undefined}
-                    className="flex items-center gap-4 p-4 bg-card rounded-xl border hover:border-gold/30 hover:shadow-md transition-all group"
+                    className="flex items-center gap-4 p-4 bg-card rounded-xl border hover:shadow-md transition-all group"
                   >
                     <div className={`w-12 h-12 rounded-xl ${c.iconBg} flex items-center justify-center shrink-0`}>
                       <c.icon className={`h-5 w-5 ${c.iconColor}`} />
                     </div>
                     <div className="flex-1">
                       <p className="text-xs text-muted-foreground">{c.label}</p>
-                      <p className="font-semibold text-sm group-hover:text-gold transition-colors">{c.value}</p>
+                      <p className="font-semibold text-sm group-hover:text-primary transition-colors">{c.value}</p>
                     </div>
-                    <ArrowRight className="h-4 w-4 text-muted-foreground/30 group-hover:text-gold transition-colors" />
+                    <ArrowRight className="h-4 w-4 text-muted-foreground/30 group-hover:text-primary transition-colors" />
                   </a>
                 </FadeIn>
               ))}
