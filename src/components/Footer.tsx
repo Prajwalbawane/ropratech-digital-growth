@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
 import WhatsappLogo from "@/assets/whatsapp-logo.svg";
+import Logo from "@/assets/ROPRATECHLOGO.png";
 
 const Footer = () => (
   <footer className="hero-gradient text-white">
     <div className="container py-16">
       <div className="grid gap-10 md:grid-cols-4">
         <div className="md:col-span-2">
-          <h3 className="text-2xl font-heading font-extrabold mb-4">
-            <span className="text-secondary">Ro</span>Pratech
-          </h3>
+          <img src={Logo} alt="RoPratech" className="h-12 w-auto mb-4" />
           <p className="text-white/60 leading-relaxed max-w-sm">
             Helping local businesses in Gadchiroli go digital with affordable websites, apps, and marketing solutions.
           </p>

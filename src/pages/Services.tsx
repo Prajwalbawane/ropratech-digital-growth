@@ -68,7 +68,9 @@ const Services = () => (
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-sm text-white/80 mb-6">
             <Zap className="h-4 w-4 text-secondary" /> What We Offer
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold">Our Services</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold">
+            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-yellow-400">Services</span>
+          </h1>
           <p className="mt-6 text-white/60 text-lg">Simple digital solutions designed for local businesses. No jargon, no confusion.</p>
         </motion.div>
       </div>
