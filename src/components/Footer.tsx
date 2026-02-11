@@ -8,7 +8,7 @@ const Footer = () => (
       <div className="grid gap-10 md:grid-cols-4">
         <div className="md:col-span-2">
           <h3 className="text-2xl font-heading font-extrabold mb-4">
-            <span className="text-secondary">Ro</span>Pratech
+            <span className="gradient-text-gold">Ro</span>Pratech
           </h3>
           <p className="text-white/60 leading-relaxed max-w-sm">
             Helping local businesses in Gadchiroli go digital with affordable websites, apps, and marketing solutions.
@@ -18,19 +18,19 @@ const Footer = () => (
               href="https://wa.me/919999999999"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-whatsapp/20 flex items-center justify-center text-whatsapp hover:bg-whatsapp/30 transition-colors"
+              className="w-10 h-10 rounded-xl bg-whatsapp/20 flex items-center justify-center text-whatsapp hover:bg-whatsapp/30 transition-colors"
             >
               <img src={WhatsappLogo} alt="WhatsApp" className="h-4 w-4" />
             </a>
             <a
               href="tel:+919999999999"
-              className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+              className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center hover:bg-gold/20 hover:text-gold transition-colors"
             >
               <Phone className="h-4 w-4" />
             </a>
             <a
               href="mailto:ropratech@gmail.com"
-              className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+              className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center hover:bg-gold/20 hover:text-gold transition-colors"
             >
               <Mail className="h-4 w-4" />
             </a>
@@ -38,7 +38,7 @@ const Footer = () => (
         </div>
 
         <div>
-          <h4 className="font-heading font-semibold mb-4 text-white/90">Quick Links</h4>
+          <h4 className="font-heading font-semibold mb-4 text-gold">Quick Links</h4>
           <ul className="space-y-3 text-sm text-white/50">
             {[
               { to: "/", label: "Home" },
@@ -47,7 +47,7 @@ const Footer = () => (
               { to: "/contact", label: "Contact" },
             ].map((l) => (
               <li key={l.to}>
-                <Link to={l.to} className="hover:text-white transition-colors inline-flex items-center gap-1 group">
+                <Link to={l.to} className="hover:text-gold transition-colors inline-flex items-center gap-1 group">
                   {l.label}
                   <ArrowUpRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
@@ -57,16 +57,16 @@ const Footer = () => (
         </div>
 
         <div>
-          <h4 className="font-heading font-semibold mb-4 text-white/90">Contact</h4>
+          <h4 className="font-heading font-semibold mb-4 text-gold">Contact</h4>
           <ul className="space-y-3 text-sm text-white/50">
-            <li className="flex items-center gap-2"><Phone className="h-3.5 w-3.5 shrink-0" /> +91 99999 99999</li>
-            <li className="flex items-center gap-2"><Mail className="h-3.5 w-3.5 shrink-0" /> ropratech@gmail.com</li>
-            <li className="flex items-start gap-2"><MapPin className="h-3.5 w-3.5 shrink-0 mt-0.5" /> Gadchiroli, Maharashtra</li>
+            <li className="flex items-center gap-2"><Phone className="h-3.5 w-3.5 shrink-0 text-gold/60" /> +91 99999 99999</li>
+            <li className="flex items-center gap-2"><Mail className="h-3.5 w-3.5 shrink-0 text-gold/60" /> ropratech@gmail.com</li>
+            <li className="flex items-start gap-2"><MapPin className="h-3.5 w-3.5 shrink-0 mt-0.5 text-gold/60" /> Gadchiroli, Maharashtra</li>
           </ul>
         </div>
       </div>
 
-      <div className="border-t border-white/10 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-white/30">
+      <div className="border-t border-gold/10 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-white/30">
         <p>© {new Date().getFullYear()} RoPratech. All rights reserved.</p>
         <p className="mt-2 md:mt-0">Built with ❤️ for Gadchiroli businesses</p>
       </div>
