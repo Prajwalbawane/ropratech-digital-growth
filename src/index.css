@@ -36,9 +36,9 @@
 
     --radius: 0.75rem;
 
-    --gradient-start: 220 80% 50%;
-    --gradient-mid: 250 70% 55%;
-    --gradient-end: 280 70% 55%;
+    --gradient-start: 240 85% 45%;
+    --gradient-mid: 215 90% 55%;
+    --gradient-end: 190 85% 48%;
 
     --whatsapp: 142 70% 42%;
     --whatsapp-foreground: 0 0% 100%;
@@ -106,7 +106,7 @@
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-mid)), hsl(var(--gradient-end)));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
